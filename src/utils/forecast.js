@@ -13,10 +13,14 @@ const forecast = (lat, long, callback) => {
             // console.log('Unable to find location')
             callback('Unable to find location', undefined)
         } else {
-            const { temperature, precipProbability } = body.currently
-            const { summary } = body.daily.data[0]
-            // console.log(`${daily.summary} It is currently ${(currently.temperature).toFixed(0)}° out. There is a ${currently.precipProbability}% of rain.`)
-            callback(undefined,`${summary} It is currently ${(temperature).toFixed(0)}° out. There is a ${precipProbability}% of rain.`)
+            const { temperature, precipProbability, windSpeed, windGust } = body.currently
+
+            const { summary, temperatureHigh, temperatureLow } = body.daily.data[0]
+
+
+            callback(undefined,`${summary} It is currently ${(temperature).toFixed(0)}° out. There is a ${precipProbability}% of rain. 
+            The High & Low Temperature today is ${temperatureHigh}° & ${temperatureLow}° with the current wind and wind gusts at ${windSpeed} 
+            & ${windGust}.`)
         }
 
     })

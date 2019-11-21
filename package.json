@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "startlocal": "node src/app.js -e js,hbs"
+    "startlocal": "nodemon src/app.js -e js,hbs",
+    "push_G_H": "git push && git push heroku master"
   },
   "author": "",
   "license": "ISC",
