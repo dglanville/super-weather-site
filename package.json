@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "startlocal": "nodemon src/app.js -e js,hbs",
-    "push_G_H": "git push && git push heroku master"
+    "pushall": "git push && git push heroku master"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "express": "^4.16.4",
     "hbs": "^4.0.1",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }
